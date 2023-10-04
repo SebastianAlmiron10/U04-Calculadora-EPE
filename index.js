@@ -1,10 +1,13 @@
 function calcularTarifa() {
     const costoServicion = 102.0;
+    let costoV = false;
+    let zonaV = false;
     let radios = document.getElementsByName('usuario');
     let tipoUsuario;
     for(let i = 0; i < radios.length; i++) {
       if(radios[i].checked) {
         tipoUsuario = radios[i].value;
+        costoV = true;
         break;
       }
     }
@@ -21,15 +24,19 @@ function calcularTarifa() {
 
         case 'centro':
             precioPorKwh = 5.80
+            zonaV = true
             break;
         case 'sur':
             precioPorKwh = 5.40
+            zonaV = true
             break;
         case 'oeste':
             precioPorKwh = 5.35
+            zonaV = true
             break;
         case 'norte':
             precioPorKwh = 5.60
+            zonaV = true
             break;
         default:
             break;
@@ -42,7 +49,10 @@ function calcularTarifa() {
 
     let resultado = document.getElementById('resultado');
 
-    resultado.innerHTML = '$' + total
-
+    if(costoV == false || zonaV == false){
+        resultado.innerHTML = 'llenar campos'
+    }else{
+        resultado.innerHTML = '$' + total
+    }
   }
   
