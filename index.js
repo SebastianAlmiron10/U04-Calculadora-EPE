@@ -2,6 +2,7 @@ function calcularTarifa() {
     const costoServicion = 102.0;
     let costoV = false;
     let zonaV = false;
+    let cantidadV = false;
     let radios = document.getElementsByName('usuario');
     let tipoUsuario;
     for(let i = 0; i < radios.length; i++) {
@@ -43,13 +44,17 @@ function calcularTarifa() {
     }
 
     let cantidadKwh = document.getElementById('cantidad').value;
-
-    let total = costoServicion + (cantidadKwh * precioPorKwh) * (1 + iva)
-    total = total.toFixed(2)
+    if (cantidadKwh > 0){
+            cantidadV = true;
+        }
+        
+    let total = costoServicion + (cantidadKwh * precioPorKwh) * (1 + iva);
+    total = total.toFixed(2);
+    
 
     let resultado = document.getElementById('resultado');
 
-    if(costoV == false || zonaV == false){
+    if(costoV == false || zonaV == false || cantidadV == false){
         resultado.innerHTML = 'llenar campos'
     }else{
         resultado.innerHTML = '$' + total
