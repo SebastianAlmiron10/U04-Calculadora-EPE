@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/png" href="IMG/logoEPE2.svg" />
+    <link rel="stylesheet" href="index.css">
+    <title>EPESF - Calcular tarifa</title>
+</head>
+<body>
+    <header >
+        <nav class="nav">
+            <div>
+                <img src="IMG/logoEPE4.svg" alt="Logo epe" width="97.92px">
+            </div>
+            <div>
+                <ul class="ul-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://www.epe.santafe.gov.ar/institucional/" target="_self">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://www.epe.santafe.gov.ar/institucional/informacion-institucional/" target="_self">institucional</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://www.epe.santafe.gov.ar/institucional/usuarios/" target="_self">Usuarios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://www.epe.santafe.gov.ar/institucional/grandes-usuarios/" target="_self">Grandes usuarios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://www.epe.santafe.gov.ar/institucional/informacion-tecnica/" target="_self">informacion tecnica</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link link-oficina" href="https://www.epe.santafe.gov.ar/oficina-virtual/login" target="_blank">oficina virtual</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <section>
+        <div class="main">
+            <div class="img-tarifa div-tarifas">
+                <img src="IMG/tarifas.svg" alt="tarifas" width="500px" height="240px">
+            </div>
+            <div class="div-tarifas div-form-tarifa">
+                <div class="form-tarifa">
+                    <div class="div-form-individual">
+                        <label class="label" for="usuario">Tipo de usuario</label required>
+                        <div class="div-radio">
+                          <input type="radio" id="residencial" name="usuario" value="residencial">
+                          <label class="input" for="residencial">Residencial</label>
+                        </div>
+                        <div class="div-radio">
+                          <input type="radio" id="industrial" name="usuario" value="industrial">
+                          <label class="input" for="industrial">Industrial</label>
+                        </div>
+                    </div>
+                      
+                      
+                    <div class="div-form-individual">
+                        <label class="label" for="zona">Zona</label>
+                        <select name="zona" id="zona" required>
+                            <option value="" disable selected hidden>seleccionar</option>
+                            <option value="centro">Distrito Centro</option>
+                            <option value="sur">Distrito Sur</option>
+                            <option value="oeste">Distrito Oeste</option>
+                            <option value="norte">Distrito Norte</option>
+                        </select>
+                    </div>
+                    
+                    <div class="div-form-individual">
+                        <label class="label" for="cantidad">Cantidad de kWh del mes</label>
+                        <input type="number" id="cantidad" required>
+                   </div>    
+                    <button type="button" onclick="calcularTarifa()">Consultar</button>
+                    <div>
+                        <span id="resultado"></span>
+                    </div>    
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="index.js"></script>
+</body>
+</html>
